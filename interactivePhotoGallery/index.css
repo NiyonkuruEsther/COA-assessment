@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'DinCondensed';
+    src: url('fonts/DINCondensed-Bold.ttf');
+    font-weight: bold;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black
+}
+
+.cards-container {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 293px;
+    height: 588px;
+    overflow: hidden;
+    align-items: end;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.text-container .more-info {
+    transition: opacity 0.25s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+    filter: grayscale(100%) blur(5px);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.25s ease-in-out, filter 0.25s ease-in-out;
+}
+
+.card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.card .text-container {
+    position: absolute;
+    color: white;
+    width: 100%;
+}
+
+.text-container .viewable-info {
+    transition: transform 0.25s ease-in-out;
+    padding: 0 0 40px 40px;
+}
+
+.viewable-info .animal-name {
+    font-family: DinCondensed;
+    font-size: 38px;
+    line-height: 38px;
+    padding-bottom: 8px;
+}
+
+.viewable-info .country {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 12px;
+    opacity: 70%;
+}
+
+.text-container .more-info {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    right: 0;
+    color: #00DBFF;
+    opacity: 0;
+    font-family: Poppins;
+    font-size: 14px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.card:hover .viewable-info {
+    transform: translateY(-30px);
+}
+
+.card:hover .more-info {
+    opacity: 1;
+}
